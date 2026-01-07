@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card glass-card mx-auto mt-4 p-4" style="max-width: 500px;">
+  <div class="card-body">
+    <h4 class="text-center mb-3">📝 Customer Form</h4>
+
+    {% if success %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      Customer added successfully!
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endif %}
+
+    <form method="POST" class="p-2">
+      <div class="mb-2">
+        <label class="form-label small">Name</label>
+        <input type="text" class="form-control form-control-sm" name="name" required>
+      </div>
+
+      <div class="mb-2">
+        <label class="form-label small">Visiting Place</label>
+       <select name="visiting_place" class="form-select form-select-sm" required>
+          <option value="">-- Select Location --</option>
+          <option>Trimbakeshwar</option>
+          <option>Ramkund</option>
+          <option>Tapovan</option>
+          <option>Panchavati</option>
+          <option>Godavari Ghat</option>
+          <option>Sadhugram</option>
+        </select>
+      </div>
+
+      <div class="mb-2">
+        <label class="form-label small">Purpose</label>
+        <select name="purpose" class="form-select form-select-sm" required>
+        <option value="">-- Select Purpose --</option>
+        <option>Holy Bath</option>
+        <option>Darshan</option>
+        <option>Religious Ceremony</option>
+        <option>Other</option>
+    </select>
+      </div>
+
+      <div class="mb-2">
+        <label class="form-label small">Family Members</label>
+        <input type="number" class="form-control form-control-sm" name="family_members">
+      </div>
+
+      <div class="d-flex justify-content-between mt-3 flex-wrap gap-2">
+        <button type="submit" class="btn btn-info btn-sm text-dark">Submit</button>
+        {% if show_view_btn %}
+        <a href="{{ view_url }}" class="btn btn-secondary btn-sm">View Customers</a>
+        {% endif %}
+        <a href="/" class="btn btn-outline-dark btn-sm">🏠 Home</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

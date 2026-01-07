@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card glass-card mx-auto mt-4 p-4" style="max-width: 500px;">
+  <div class="card-body">
+    <h4 class="text-center mb-3">👤 Traveller Form</h4>
+
+    {% if success %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      Traveller added successfully!
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endif %}
+
+    <form method="POST" class="p-2">
+      <div class="mb-2">
+        <label class="form-label small">Name</label>
+        <input type="text" class="form-control form-control-sm" name="name" required>
+      </div>
+
+      <div class="mb-2">
+        <label class="form-label small">Age</label>
+        <input type="number" class="form-control form-control-sm" name="age">
+      </div>
+
+      <div class="mb-2">
+        <label class="form-label small">City</label>
+        <select name="city" class="form-select form-select-sm"   required>
+                <option value="">-- Select City --</option>
+                <option value="Nashik">Nashik</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Pune">Pune</option>
+                <option value="Nagpur">Nagpur</option>
+                <option value="Aurangabad">Aurangabad</option>
+                <option value="Ahmednagar">Ahmednagar</option>
+                <option value="Other">Other</option>
+            </select>
+      </div>
+
+      <div class="mb-2">
+        <label class="form-label small">Transport</label>
+        <select name="transport" class="form-select form-select-sm" required>
+          <option value="">-- Select Transport --</option>
+          <option>Bus</option>
+          <option>Train</option>
+          <option>Private Vehicle</option>
+          <option>Walking</option>
+        </select>
+      </div>
+
+      <div class="mb-2">
+        <label class="form-label small">Purpose</label>
+        <select name="purpose" class="form-select form-select-sm" required>
+        <option value="">-- Select Purpose --</option>
+        <option>Holy Bath</option>
+        <option>Darshan</option>
+        <option>Religious Ceremony</option>
+        <option>Other</option>
+    </select>
+      </div>
+
+      <div class="d-flex justify-content-between mt-3 flex-wrap gap-2">
+        <button type="submit" class="btn btn-success btn-sm">Submit</button>
+        {% if show_view_btn %}
+        <a href="{{ view_url }}" class="btn btn-secondary btn-sm">View Travellers</a>
+        {% endif %}
+        <a href="/" class="btn btn-outline-dark btn-sm">🏠 Home</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

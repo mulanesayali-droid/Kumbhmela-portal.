@@ -1,0 +1,10 @@
+id,vehicle_name,type,rent_amount
+1,eon,Car,400.0
+2,citybus,Bus,250.0
+3,Ignis,Car,600.0
+4,swift,Car,500.0
+5,Suv700,Car,600.0
+6,Passion,Bike,300.0
+7,Creta,Car,650.0
+8,shivai,Bus,500.0
+9,Bullet,Bike,300.0
